@@ -24,7 +24,7 @@
   --maximum-red: hsl(0, 72%, 51%);
   --eerie-black: hsl(0, 0%, 9%);
   --mint-cream: hsl(146, 41%, 97%);
-  --cadet-gray: hsl(215, 20%, 65%);
+  --cadet-gray: hsl(195, 35%, 47%);
   --light-gray: hsl(216, 12%, 84%);
   --carcoal_20: hsla(214, 19%, 29%, 0.2);
   --carcoal_15: hsla(214, 19%, 29%, 0.15);
@@ -197,14 +197,28 @@ body{
 
 .navbar { display: flex; }
 .header {
-  background-image: url("../images/back.jpg");
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding-block: 15px;
-  z-index: 4;  
+  z-index: 4;
+  background-color: var(--white);
+  box-shadow: var(--shadow-2);
 }
+.container .logo { 
+  width: 50px;   
+  height: 25px;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  transform: translateX(-20%);
+  z-index: 5;
+}
+
 
 .header .active { box-shadow: var(--shadow-1); }
 
@@ -216,18 +230,9 @@ body{
    
 }
 
-.logo {
-  font-size: 2.2rem;
-  font-weight: var(--fw-600);
-  color: var(--black);
 
-}
 
-.logo ion-icon {
-  display: inline-block;
-  color: var(--green-pigment);
-  --ionicon-stroke-width: 50px;
-}
+
 
 .nav-toggle-btn{
   font-size: 35px;
@@ -285,161 +290,25 @@ body{
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
-/* .article { position: relative; }
-.hero { padding-block-start:80px; position: relative; }
-.hero-bg {
-  background-image: url("../images/hero-bg2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; 
-  border-radius: var(--radius-16);
-  overflow: hidden;
- }
-.hero-content { 
-  background-color: var(--oxford-blue_60);
-  padding-block: 180px;
-  padding-inline: 40px;
-  display: grid;
-  grid-template-columns: 1fr;
-  place-content: center;
-  text-align: center; 
+
+.hero{
+  margin-bottom: 105vh;
 }
-.hero-title {
-  max-width: 16ch;
-  margin-inline: auto;
-  color: var(--white);
-  line-height: 1.5;
-  margin-block-end: 20px;  
-}
-
-.hero-title span {
-  color: var(--green-pigment);
-  display: inline-block;
-  overflow: hidden;
-}
-
-.hero-text { 
-  color: var(--white_70);
-  font-size: var(--fs-3);
-  line-height: 1.4;
-}
-
-.hero-form-wrapper {
-  background-color: rgb(248, 250, 252);
-  margin-block-start: -100px;
-  width: calc(100% -10px);
-  margin-inline: auto;
-  border-radius: var(--radius-16);
-  overflow: hidden;
-  box-shadow: var(--shadow-2);
-
-}
-.form-tab {
-  padding: 16px;
-  border-block-end: 1px solid var(--gainsboro);
-  display: flex;
-  justify-content: center;
-}
-
-.tab-btn {
-  padding: 12px 24px;
-  color: var(--oxford-blue);
-  font-weight: var(--fw-500);
-  border-radius: var(--radius-6);
-  transition: var(--transition);
-}
-
-.tab-btn:is(:hover, :focus){ color: var(--green-pigment); }
-
-.tab-btn.active {
-  color: var(--white);
-  background-color: var(--green-pigment);
-}
-
-.hero-form {
-  display: grid;
-  gap: 25px;
-  padding: 25px;  
-}
-
-.hero-form .input-wrapper { position: relative; }
-
-.hero-form :is(.input-label, .input-field) { color: var(--oxford-blue); }
-
-.hero-form .input-label {
-  font-weight: var(--fw-500);
-  margin-block-end: 10px; 
-}
-.hero-form :is(.input-field, .dropdown-list){
-  min-height: 40px;
-  border: 1px solid var(--gainsboro);
-  border-radius: var(--radius-4);
-  outline: none;
-}
-.hero-form :is(.input-field, .dropdown-list):focus { border-color: var(--green-pigment)}
-.hero-form .input-wrapper ion-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(20%);
-  left: 15px;
-  color: var(--oxford-blue);
-  --ionicon-stroke-width: 40px;
-
-}
-
-.hero-form .input-field { padding-inline: 45px 15px; }
-.hero .input-field::placeholder {color: var(--manatee); }
-.hero-form .dropdown-list { padding-inline:15px ;}
-.hero-form .btn {max-width: 100%;}
-
-
-
-
-.hero-search {
-  position: absolute;
-  bottom: -30px; 
-  right: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-}
-
-.search-textbox {
-  padding: 10px;
-  width: 300px;
-  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.1); 
-  font-size: 26px;
-}
-.search-textbox:focus {
-  border-color: green; 
-}
-
-.search-button {
-  padding: 11px 30px;
-  margin-top: -20px;
-  background-color: var(--green-pigment);
-  color:var(--white);
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-} */
 
 .slider {
   position: absolute;
   top: 10px;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: var(--shadow-2);
 }
 
 .slides {
-  width: 400%; /* Set the width to accommodate all slides */
-  height: 100%;
+  width: 400vw; /* Set the width to accommodate all slides */
+  height: 100vh;
   display: flex;
   animation: animate 24s infinite;
 }
@@ -494,46 +363,6 @@ body{
 }
 
 
-
-
-
-
-
-.navigation-auto {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 10px; /* Adjust the positioning based on your design */
-  width: 100%;
-}
-
-.navigation-auto input[type="radio"] {
-  display: none;
-}
-
-.navigation-auto label {
-  border: 2px solid rgb(118, 215, 118);
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  margin: 0 14px; /* Adjust the spacing between buttons */
-  cursor: pointer;
-}
-
-.navigation-auto label:hover {
-  background: rgb(118, 215, 118);
-}
-
-/* Adjust the styles for activated buttons */
-#radio1:checked ~ .auto-btn1,
-#radio2:checked ~ .auto-btn2,
-#radio3:checked ~ .auto-btn3,
-#radio4:checked ~ .auto-btn4 {
-background: rgb(118, 215, 118);
-}
-
-
-
 .slide h2 {
   position: absolute;
   top: 50%;
@@ -554,12 +383,7 @@ background: rgb(118, 215, 118);
   animation: none; /* Stop animation for the first slide */
 }
 
-.slides .slide:nth-child(1) input[type="radio"]#radio1:checked ~ .navigation-auto .auto-btn1,
-.slides .slide:nth-child(2) input[type="radio"]#radio2:checked ~ .navigation-auto .auto-btn2,
-.slides .slide:nth-child(3) input[type="radio"]#radio3:checked ~ .navigation-auto .auto-btn3,
-.slides .slide:nth-child(4) input[type="radio"]#radio4:checked ~ .navigation-auto .auto-btn4 {
-  background: rgb(118, 215, 118);
-}
+
 
 
 
@@ -570,29 +394,31 @@ background: rgb(118, 215, 118);
 
 .hero-search {
   position: absolute;
-  bottom: -18%;
+  bottom: -18vh;
   right: 0;
-  left: 40%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
 
 .search-textbox {
-  padding: 5px;
-  width: 180px;
+  padding: 10px;
+  width: 200px;
   box-shadow: var(--shadow-1); 
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  border: none;
 }
 .search-textbox:focus {
   border-color:var(--green-pigment); 
+  border: 2px solid var(--sea-green);
 }
 .search-textbox:hover {
   border-color:var(--green-pigment); 
+  border: 2px solid var(--green-pigment);
 }
 
 .search-button {
-  padding: 10px 14px;
+  padding: 12px 14px;
   margin-top: -20px;
   background-color: var(--green-pigment);
   color:var(--white);
@@ -604,7 +430,7 @@ background: rgb(118, 215, 118);
 }
 
 .search-button:hover {
-  background-color: var(--black);
+  background-color: var(--sea-green);
   color: var(--white);
   transition: 0.5s;
 
@@ -614,7 +440,11 @@ background: rgb(118, 215, 118);
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
-.about {margin-top: 600px;}
+/* .about {
+  margin-top: 620px;
+  width: 100vw; 
+  height: 100vh; 
+}
 .about .section-title { max-width: 20ch; }
 
 .about-banner {
@@ -622,6 +452,12 @@ background: rgb(118, 215, 118);
   overflow: hidden;
   border-radius: var(--radius-16);
   margin-block-end: 30px;
+  box-shadow: var(--shadow-1);
+}
+.about-banner:hover{
+  box-shadow: var(--shadow-2);
+  background: rgba(0, 0, 0, 0.2);
+
 }
 .about-banner .play-btn {
   position: absolute;
@@ -636,16 +472,30 @@ background: rgb(118, 215, 118);
 
 }
 
+
 .about-banner .play-btn:hover {
   background-color: var(--green-pigment);
   color: var(--white);
 }
-.about .section-text { margin-block: 20px 25px; }
+.about .about-content{
+  box-shadow: var(--shadow-1);
+  padding: var(--section-padding);
+}
+.about .about-content:hover{
+  box-shadow: var(--shadow-2);
+}
+.about .section-text {
+   margin-block: 20px 25px; 
+  } */
 
 
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
+.service{
+  /* margin-top: 200%; */
+  background: linear-gradient(135deg, #a6ef9e, #e9e6e4);
+}
 .service :is(.section-title, .section-text) { text-align: center; }
 
 .service .section-text { margin-block: 15px 60px; }
@@ -657,16 +507,26 @@ background: rgb(118, 215, 118);
 .service-card { 
   text-align: center; 
   box-shadow: var(--shadow-1);
+  background-color: var(--white);
 }
 
 .service-card:hover{
-  background-color: var(--sea-green);
   color: var(--white);
   box-shadow: var(--shadow-2);
-  border-radius: var(--radius-16);
   transition: 1s;
   cursor: pointer;
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #7ce371, #4a4747);
+
 }
+.card-icon {
+  transition: transform 1s;
+}
+
+.service-card:hover .card-icon {
+  transform: rotate(360deg); /* Rotate the icon 45 degrees on hover */
+}
+
 
 .service-card .card-icon{
   background-color: var(--mint-cream);
@@ -698,6 +558,7 @@ background: rgb(118, 215, 118);
   display: grid;
   gap: 60px;
 }
+
 .property-card {
   position: relative;
   border-radius: var(--radius-12);
@@ -711,14 +572,14 @@ background: rgb(118, 215, 118);
 .property-card:is(:hover, :focus-within) { box-shadow: var(--shadow-5); }
 
 .property-card .card-action-btn {
+  transform: rotate(45deg);
   position: absolute;
-  top: 0px;
-  right: 10px;
+  top: 10px;
+  right: -26px;
   background-color: var(--green-pigment);
   color: var(--white);
-  padding: 5px 15px;
-  border-radius: 5px;
-
+  padding: 1px 30px;
+  font-size: 18px ;
 }
 .property-card .sell{
   position: absolute;
@@ -794,6 +655,18 @@ background: rgb(118, 215, 118);
   color: var(--mango);
   font-size: 16px;
 }
+.property-card-image {
+  transition: transform 0.6s ease-in-out, filter 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+  filter: sepia(40%) saturate(80%);
+}
+
+.property-card-image:hover {
+  transform: scale(1.1); /* Adjust the scale factor for the zoom effect */
+  filter: brightness(120%) grayscale(30%); 
+  
+}
+
+
 
 
 /*-----------------------------------*\
@@ -1033,7 +906,9 @@ input[type="submit"]:hover {
 
 @media (min-width:640px) {
   /* REUSED STYLE */
-
+ .hero{
+  margin-bottom: 103vh;
+ }
   .container {
     max-width: 640px;
     width: 100%;
@@ -1050,6 +925,7 @@ input[type="submit"]:hover {
 
   .hero-search {
     bottom: -17%;
+    left: 50%;
    
   }
 

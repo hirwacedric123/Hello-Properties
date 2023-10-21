@@ -22,12 +22,19 @@
 
 <style>
   .img-cover {
-    max-width: 70%;
+    max-width: 100%;
     max-height: 100%;
-    
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px hsla(0, 2%, 56%, 0.6);
+  }
+  .img-cover:hover{
+    box-shadow: 1px 2px 4px hsla(0, 0%, 0%, 0.6);
+    transition: 1s;
+
   }
   .img-container {
-  position: relative;
+    position: relative;
+    
   }
 
   .slide-left-button,
@@ -49,8 +56,16 @@
   }
 
   .slide-right-button {
-    right: 32%;
+    right: 2%;
   }
+  
+  .slide-left-button:hover,
+  .slide-right-button:hover { 
+    background-color: black;
+    box-shadow: 1px 2px 4px hsla(0, 3%, 44%, 0.6);
+    transition: 1s;
+  }
+
   @keyframes vibrate {
   0% { transform: translateX(0); }
   25% { transform: translateX(-2px); }
@@ -59,27 +74,38 @@
   100% { transform: translateX(0); }
   }
 
+
   /* Apply the animation to the buttons */
   .slide-left-button,
   .slide-right-button {
     animation: vibrate 0.7s ease infinite;
   }
-
   /* Media queries for further adjustments */
-  @media (max-width: 768px) {
-    .slide-left-button,
-    .slide-right-button {
-      font-size: 20px;
-      padding: 3px 7px;
+  @media (min-width:640px) {
+  /* REUSED STYLE */
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+      margin-inline: auto;
+      margin: auto;
+    }
+  }
+  @media (min-width: 760px){
+    .container {
+      max-width: 740px;
     }
   }
 
-  @media (max-width: 480px) {
-    .slide-left-button,
-    .slide-right-button {
-      font-size: 18px;
+  @media (min-width: 992px){
+    .container{
+      max-width: 800px;
     }
   }
+
+
+
+
 </style>
 
 <script>

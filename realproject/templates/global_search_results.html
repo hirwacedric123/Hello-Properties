@@ -14,14 +14,14 @@
                             {% if item|get_class_name == 'House' %}
                             <li>
                                 <div class="property-card">
-                                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
-                                    <a href="/property_detail/{{ item.id }}">
-                                        <img src="{{ item.image.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover">
+                                    <figure class="card-banner" style="min-width: 350px; height: 300px;">
+                                    <a href="/property_detail/{{ item.id }}" style="display: block; width: 100%; height: 100%;">
+                                        <img src="{{ item.image.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover property-card-image" style="object-fit: cover; width: 100%; height: 100%;">
                                     </a>
                                     </figure>
-                                    <!-- <button class="card-action-btn" aria-label="add to favorite">
-                                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
-                                    </button> -->
+                                    <button class="card-action-btn" aria-label="add to favorite">
+                                      <span> New </span>
+                                    </button>
                                     <button class="sell" aria-label="add to favorite">
                                     For {{ item.use }}
                                     </button>
@@ -76,13 +76,13 @@
                             {% elif item|get_class_name == 'LandPlot' %}
                             <li>
                                 <div class="property-card">
-                                  <figure class="card-banner img-holder" style="--width: ; --height: ;">
-                                    <a href="/landplot_detail/{{ plot.id }}">
-                                      <img src="{{ plot.plotImage1.url }}" loading="lazy" alt="{{ plot.address }}" class="img-cover">
+                                  <figure class="card-banner img-holder" style="min-width: 350px; height: 300px;">
+                                    <a href="/landplot_detail/{{ plot.id }}" style="display: block; width: 100%; height: 100%;">
+                                      <img src="{{ plot.plotImage1.url }}" loading="lazy" alt="{{ plot.address }}" class="img-cover property-card-image" style="object-fit: cover; width: 100%; height: 100%;">
                                     </a>
                                   </figure>
                                   <button class="card-action-btn" aria-label="add to favorite">
-                                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                                    <span> New </span>
                                   </button>
                                   <button class="sell" aria-label="add to favorite">
                                     For {{ plot.use }}
@@ -126,13 +126,13 @@
                             {% elif item|get_class_name == 'Car' %}
                             <li>
                                 <div class="property-card">
-                                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
-                                        <a href="/car_detail/{{ item.id }}">
-                                            <img src="{{ item.carImage1.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover">
+                                    <figure class="card-banner img-holder" style="min-width: 350px; height: 300px;">
+                                        <a href="/car_detail/{{ item.id }}" style="display: block; width: 100%; height: 100%;">
+                                            <img src="{{ item.carImage1.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover property-card-image" class="img-cover property-card-image" style="object-fit: cover; width: 100%; height: 100%;">
                                         </a>
                                     </figure>
                                     <button class="card-action-btn" aria-label="add to favorite">
-                                        <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                                        <span> New </span>
                                     </button>
                                     <button class="sell" aria-label="add to favorite">
                                         For {{ item.use }}
@@ -169,7 +169,7 @@
                                                         <ion-icon name="star"></ion-icon>
                                                         <ion-icon name="star"></ion-icon>
                                                     </div>
-                                                    <span>5.0</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
                                         </div>
